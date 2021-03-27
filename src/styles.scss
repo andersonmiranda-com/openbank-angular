@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  font-family: "Quicksand", sans-serif;
+}
+
+$primary-color: #ff0049;
+$secondary-color: #002b45;
+$terciary-color: #fff1e5;
+
+$primary-light: #fcb2c7;
+
+$white: #ffffff;
+$black: #000000;
+
+$secondary: $secondary-color;
+@import "node_modules/bootstrap/scss/bootstrap.scss";

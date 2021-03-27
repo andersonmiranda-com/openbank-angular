@@ -1,0 +1,13 @@
+.App {
+  background-color: #f7f7f7;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .App {
+    background-color: #fff;
+  }
+}

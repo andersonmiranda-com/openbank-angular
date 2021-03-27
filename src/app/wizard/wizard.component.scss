@@ -1,0 +1,83 @@
+/* Wizard */
+
+@import "../../styles.scss";
+
+.wizard {
+  .content {
+    width: 80%;
+    margin: auto;
+    margin-top: 80px;
+    background-color: #fff;
+    padding: 40px;
+
+    a {
+      color: $primary-color;
+    }
+
+    .bd-wizard-step-title {
+      font-size: 20px;
+      font-weight: bold;
+      color: #7b7f89;
+      margin-bottom: 10px;
+    }
+
+    .section-heading {
+      font-size: 30px;
+      font-weight: bold;
+      color: #030303;
+      margin-bottom: 17px;
+    }
+
+    p {
+      font-size: 16px;
+      color: #030303;
+    }
+
+    .successIcon {
+      font-size: 55px;
+      color: $success;
+    }
+
+    .errorIcon {
+      font-size: 50px;
+      color: $danger;
+    }
+  }
+
+  .actions {
+    & > ul {
+      list-style: none;
+      padding-left: 0;
+      display: flex;
+    }
+
+    li {
+      a {
+        display: inline-block;
+        border-radius: 6px;
+        background-color: #00d69f;
+        padding: 16px 30px;
+        color: #fff;
+        font-style: 15px;
+        font-weight: bold;
+      }
+
+      &.disabled {
+        display: none;
+      }
+
+      &:not(.disabled) + li,
+      &:not(:first-child):last-child {
+        margin-left: 15px;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .content {
+      width: 100%;
+      margin-top: 20px;
+      padding: 20px;
+    }
+  }
+}

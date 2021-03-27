@@ -1,0 +1,70 @@
+@import "../../styles.scss";
+
+.steps {
+  padding-bottom: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  & > ul {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    justify-content: space-between;
+    background-image: linear-gradient($primary-light, $primary-light);
+    background-size: calc(100% - 50px) 4px;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    li {
+      a {
+        display: inline-block;
+      }
+
+      span.number {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        border: 2px solid #fff;
+        border-radius: 50%;
+        background-color: $primary-light;
+        text-align: center;
+        line-height: 34px;
+        color: #fff;
+        font-size: 20px;
+      }
+
+      @media (max-width: 768px) {
+        span.number {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          background-color: $primary-light;
+          text-align: center;
+          line-height: 25px;
+          color: #fff;
+          font-size: 16px;
+        }
+      }
+
+      &.current,
+      &.done {
+        span.number {
+          background-color: $primary-color;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  span.number {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #bdbfc2;
+    text-align: center;
+    line-height: 20px;
+    color: #fff;
+    font-size: 14px;
+  }
+}

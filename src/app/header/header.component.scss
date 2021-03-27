@@ -1,0 +1,22 @@
+header {
+  background-color: #d1dcdd;
+
+  .navbar-light {
+    border-bottom: solid 1px #e9ecf4;
+
+    .navbar-brand {
+      img {
+        height: 26px;
+      }
+    }
+
+    .navbar-nav {
+      .nav-link {
+        padding: 30px 15px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #030303;
+      }
+    }
+  }
+}

@@ -1,1 +1,170 @@
-<p>wizard works!</p>
+<div class="wizard">
+  <div class="content">
+    Step: {{ step }}
+    <section *ngIf="step === 1">
+      <h2 class="section-heading">Welcome!</h2>
+      <p>Thank you for choosing "Cuenta Corriente OpenClose".</p>
+
+      <p>Your account is almost ready to be used.</p>
+
+      <p>
+        "In the next steps, we will guide you to complete your account creation
+        by setting up your password.
+      </p>
+
+      <p>To start, please agree with the terms and click "Next" button.</p>
+
+      <br />
+
+      <div class="form-check mt-5">
+        <form>
+          <input
+            type="checkbox"
+            class="form-check-input"
+            id="consent"
+            name="consent"
+            [(ngModel)]="consent"
+          />
+
+          <label htmlFor="consent" class="form-check-label text-small">
+            <small>
+              I am of legal age and I accept that my data be treated according
+              to the <a href="#"> privacy police</a>.
+            </small>
+          </label>
+        </form>
+      </div>
+
+      <div class="row mt-2">
+        <div class="col-6"></div>
+
+        <div class="col-6">
+          <button
+            class="btn btn-sm btn-secondary float-right"
+            (click)="nextStep()"
+            [disabled]="!consent"
+          >
+            Next
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section *ngIf="step == 2">
+      <h2 class="section-heading">Password setup</h2>
+
+      <p>
+        First, you need to set up your password: <br />
+        <small>
+          (It must contains from 8 to 24 characters and at least 1 capital
+          letter and 1 number)
+        </small>
+      </p>
+      {{ userForm.submitted }}
+      <form [formGroup]="userForm" novalidate>
+        <div class="form-row">
+          <div class="col-md-6 mb-3">
+            <label for="pass" class="sr-only"> Password </label>
+            <input
+              type="password"
+              name="pass"
+              id="pass"
+              class="form-control"
+              placeholder="Password"
+              formControlName="pass"
+            />
+            <div
+              *ngIf="getControl.pass.invalid && formSubmited"
+              class="text-danger"
+            >
+              <small *ngIf="getControl.pass.errors.required">
+                Password is required
+              </small>
+
+              <small
+                *ngIf="
+                  getControl.pass.errors?.pattern ||
+                  getControl.pass.errors?.maxlength ||
+                  getControl.pass.errors?.minlength
+                "
+              >
+                Invalid password
+              </small>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label htmlFor="repass" class="sr-only"> Confirm password </label>
+            <input
+              type="password"
+              name="repass"
+              id="repass"
+              required
+              class="form-control"
+              placeholder="Confirm"
+              formControlName="repass"
+            />
+            <small class=""> Passwords does not match </small>
+          </div>
+        </div>
+
+        <p>You can also create a hint to help you remember your password:</p>
+
+        <div class="form-group">
+          <label htmlFor="hint" class="sr-only"> Hint </label>
+          <input
+            type="text"
+            name="hint"
+            id="hint"
+            required
+            class="form-control"
+            placeholder="Hint"
+            formControlName="hint"
+          />
+          <small class=""> Hint too long </small>
+        </div>
+      </form>
+
+      <div class="row mt-5">
+        <div class="col-6">
+          <button
+            class="btn btn-sm btn-light float-left"
+            (click)="previousStep()"
+          >
+            Previous
+          </button>
+        </div>
+
+        <div class="col-6">
+          <button
+            class="btn btn-sm btn-secondary float-right"
+            (click)="onSubmit()"
+            [disabled]="formSending"
+          >
+            <div
+              *ngIf="formSending"
+              class="spinner-border spinner-border-sm mr-2"
+              role="status"
+              aria-hidden="true"
+            ></div>
+
+            Next
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section *ngIf="step == 3">
+      <div>
+        <h2 class="section-heading">An error was occurred :(</h2>
+        <p>Was not possible save your password. Please try agian later.</p>
+        <div class="row mt-5">
+          <div class="col-6">
+            <button class="btn btn-sm btn-secondary float-left" onClick="">
+              Try again
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
