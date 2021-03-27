@@ -1,1 +1,11 @@
-<p>stepper works!</p>
+<div class="steps">
+  <ul>
+    <li
+      *ngFor="let st of steps"
+      [ngClass]="st <= step ? 'done' : ''"
+      key="{{ st }}"
+    >
+      <span class="number">{{ st }}</span>
+    </li>
+  </ul>
+</div>

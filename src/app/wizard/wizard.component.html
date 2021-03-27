@@ -1,6 +1,6 @@
 <div class="wizard">
   <div class="content">
-    Step: {{ step }}
+    <app-stepper [step]="step"></app-stepper>
 
     <section *ngIf="step === 1">
       <h2 class="section-heading">Welcome!</h2>
