@@ -3,17 +3,17 @@
     <app-stepper [step]="step"></app-stepper>
 
     <section *ngIf="step === 1">
-      <h2 class="section-heading">Welcome!</h2>
-      <p>Thank you for choosing "Cuenta Corriente OpenClose".</p>
+      <h2 class="section-heading" i18n>Welcome!</h2>
+      <p i18n>Thank you for choosing "Cuenta Corriente OpenClose".</p>
 
-      <p>Your account is almost ready to be used.</p>
+      <p i18n>Your account is almost ready to be used.</p>
 
-      <p>
+      <p i18n>
         "In the next steps, we will guide you to complete your account creation
         by setting up your password.
       </p>
 
-      <p>To start, please agree with the terms and click "Next" button.</p>
+      <p i18n>To start, please agree with the terms and click "Next" button.</p>
 
       <br />
 
@@ -28,7 +28,7 @@
           />
 
           <label htmlFor="consent" class="form-check-label text-small">
-            <small>
+            <small i18n>
               I am of legal age and I accept that my data be treated according
               to the <a href="#"> privacy police</a>.
             </small>
@@ -41,6 +41,7 @@
 
         <div class="col-6">
           <button
+            i18n
             class="btn btn-sm btn-secondary float-right"
             (click)="nextStep()"
             [disabled]="!consent"
@@ -53,16 +54,15 @@
     </section>
 
     <section *ngIf="step == 2">
-      <h2 class="section-heading">Password setup</h2>
+      <h2 class="section-heading" i18n>Password setup</h2>
 
-      <p>
+      <p i18n>
         First, you need to set up your password: <br />
         <small>
           (It must contains from 8 to 24 characters and at least 1 capital
           letter and 1 number)
         </small>
       </p>
-      {{ userForm.submitted }}
       <form [formGroup]="userForm" novalidate>
         <div class="form-row">
           <div class="col-md-6 mb-3">
@@ -89,13 +89,16 @@
                   getControl.pass.errors?.maxlength ||
                   getControl.pass.errors?.minlength
                 "
+                i18n
               >
                 Invalid password
               </small>
             </div>
           </div>
           <div class="col-md-6">
-            <label htmlFor="repass" class="sr-only"> Confirm password </label>
+            <label htmlFor="repass" class="sr-only" i18n>
+              Confirm password
+            </label>
             <input
               type="password"
               name="repass"
@@ -108,16 +111,19 @@
             <small
               *ngIf="userForm.errors?.mismatch && formSubmited"
               class="text-danger"
+              i18n
             >
               Passwords does not match
             </small>
           </div>
         </div>
 
-        <p>You can also create a hint to help you remember your password:</p>
+        <p i18n>
+          You can also create a hint to help you remember your password:
+        </p>
 
         <div class="form-group">
-          <label htmlFor="hint" class="sr-only"> Hint </label>
+          <label htmlFor="hint" class="sr-only" i18n> Hint </label>
           <input
             type="text"
             name="hint"
@@ -129,6 +135,7 @@
           <small
             *ngIf="getControl.hint.invalid && formSubmited"
             class="text-danger"
+            i18n
           >
             Hint too long
           </small>
@@ -143,7 +150,7 @@
           >
             <i class="bi bi-chevron-left"></i>
 
-            Previous
+            <span i18n>Previous</span>
           </button>
         </div>
 
@@ -160,7 +167,7 @@
               aria-hidden="true"
             ></div>
 
-            Next
+            <span i18n>Next</span>
             <i class="bi bi-chevron-right"></i>
           </button>
         </div>

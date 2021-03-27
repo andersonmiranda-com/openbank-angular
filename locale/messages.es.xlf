@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="5890833044137447416" datatype="html">
+        <source>Welcome!</source>
+        <target>¡Bienvenido!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/wizard/wizard.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6005943670051287888" datatype="html">
+        <source>Thank you for choosing &quot;Cuenta Corriente OpenClose&quot;.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/wizard/wizard.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1164487152305907909" datatype="html">
+        <source>Your account is almost ready to be used.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/wizard/wizard.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3267365874326266892" datatype="html">
+        <source> &quot;In the next steps, we will guide you to complete your account creation by setting up your password. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/wizard/wizard.component.html</context>
+          <context context-type="linenumber">12,14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="241148246993105688" datatype="html">
+        <source>To start, please agree with the terms and click &quot;Next&quot; button.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/wizard/wizard.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2233143885634085727" datatype="html">
+        <source> I am of legal age and I accept that my data be treated according to the <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;#&quot;&gt;"/> privacy police<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/wizard/wizard.component.html</context>
+          <context context-type="linenumber">32,34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="236482512827973994" datatype="html">
+        <source> Next <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i class=&quot;bi bi-chevron-right&quot;&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/wizard/wizard.component.html</context>
+          <context context-type="linenumber">49,50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8459234556681378061" datatype="html">
+        <source>Password setup</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/wizard/wizard.component.html</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3306655642779863649" datatype="html">
+        <source> First, you need to set up your password: <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br /&gt;"/><x id="START_SMALL_TEXT" ctype="x-small" equiv-text="&lt;small&gt;"/> (It must contains from 8 to 24 characters and at least 1 capital letter and 1 number) <x id="CLOSE_SMALL_TEXT" ctype="x-small" equiv-text="&lt;/small&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/wizard/wizard.component.html</context>
+          <context context-type="linenumber">60,64</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3729813199020962927" datatype="html">
+        <source> Invalid password </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/wizard/wizard.component.html</context>
+          <context context-type="linenumber">94,95</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1165858694690603315" datatype="html">
+        <source> Confirm password </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/wizard/wizard.component.html</context>
+          <context context-type="linenumber">100,101</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4095828520480352319" datatype="html">
+        <source> Passwords does not match </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/wizard/wizard.component.html</context>
+          <context context-type="linenumber">116,117</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4710804806710945366" datatype="html">
+        <source> You can also create a hint to help you remember your password: </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/wizard/wizard.component.html</context>
+          <context context-type="linenumber">122,123</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1616643467048425924" datatype="html">
+        <source> Hint </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/wizard/wizard.component.html</context>
+          <context context-type="linenumber">126</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="382467516585234340" datatype="html">
+        <source> Hint too long </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/wizard/wizard.component.html</context>
+          <context context-type="linenumber">140,141</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4452427314943113135" datatype="html">
+        <source>Previous</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/wizard/wizard.component.html</context>
+          <context context-type="linenumber">153</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3885497195825665706" datatype="html">
+        <source>Next</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/wizard/wizard.component.html</context>
+          <context context-type="linenumber">170</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

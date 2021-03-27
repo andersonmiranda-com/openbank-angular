@@ -61,6 +61,12 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "es": {
+              "i18nFile": "src/locale/messages.es.xlf",
+              "i18nLocale": "es",
+              "i18nFormat": "xlf",
+              "aot": true
             }
           }
         },
@@ -72,6 +78,9 @@
           "configurations": {
             "production": {
               "browserTarget": "openbank-angular:build:production"
+            },
+            "es": {
+              "browserTarget": "test-i18n:build:es"
             }
           }
         },
