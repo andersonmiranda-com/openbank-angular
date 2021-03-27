@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import {
+  AbstractControl,
+  FormGroup,
+  FormBuilder,
+  Validators,
+} from '@angular/forms';
 import { submitForm } from '../../services/api';
 
 @Component({
@@ -27,19 +32,28 @@ export class WizardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.userForm = this.formBuilder.group({
-      pass: [
-        '',
-        [
-          Validators.required,
-          Validators.minLength(8),
-          Validators.maxLength(24),
-          Validators.pattern(this.passPattern),
+    this.userForm = this.formBuilder.group(
+      {
+        pass: [
+          '',
+          [
+            Validators.required,
+            Validators.minLength(8),
+            Validators.maxLength(24),
+            Validators.pattern(this.passPattern),
+          ],
         ],
-      ],
-      repass: ['', [Validators.required]],
-      hint: [''],
-    });
+        repass: ['', [Validators.required]],
+        hint: ['', [Validators.maxLength(255)]],
+      },
+      { validator: this.passwordMatch }
+    );
+  }
+
+  passwordMatch(frm: FormGroup) {
+    return frm.controls['pass'].value === frm.controls['repass'].value
+      ? null
+      : { mismatch: true };
   }
 
   get getControl() {
@@ -74,11 +88,14 @@ export class WizardComponent implements OnInit {
       this.formSending = false;
       console.log(result);
 
-      if (result.status === 200) this.formSuccess = true;
+      if (result.status === 200) {
+        this.formSuccess = true;
+        this.step += 1;
+      }
     } catch (e) {
       this.formSending = false;
       this.formSuccess = false;
+      this.step += 1;
     }
-    console.log(this.formSuccess);
   }
 }

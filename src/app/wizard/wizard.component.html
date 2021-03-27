@@ -103,7 +103,12 @@
               placeholder="Confirm"
               formControlName="repass"
             />
-            <small class=""> Passwords does not match </small>
+            <small
+              *ngIf="userForm.errors?.mismatch && formSubmited"
+              class="text-danger"
+            >
+              Passwords does not match
+            </small>
           </div>
         </div>
 
@@ -115,12 +120,16 @@
             type="text"
             name="hint"
             id="hint"
-            required
             class="form-control"
             placeholder="Hint"
             formControlName="hint"
           />
-          <small class=""> Hint too long </small>
+          <small
+            *ngIf="getControl.hint.invalid && formSubmited"
+            class="text-danger"
+          >
+            Hint too long
+          </small>
         </div>
       </form>
 
@@ -154,12 +163,33 @@
     </section>
 
     <section *ngIf="step == 3">
-      <div>
+      <div *ngIf="formSuccess">
+        <h2 class="section-heading">Congratulations!</h2>
+        <p>Your password was saved successfully.</p>
+        <p>You can start to use your account now.</p>
+        <div class="row mt-5">
+          <div class="col-6">
+            <button class="btn btn-sm btn-light float-left" (click)="restart()">
+              Restart
+            </button>
+          </div>
+          <div class="col-6">
+            <button class="btn btn-sm btn-secondary float-right">
+              Access my account
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="!formSuccess">
         <h2 class="section-heading">An error was occurred :(</h2>
         <p>Was not possible save your password. Please try agian later.</p>
         <div class="row mt-5">
           <div class="col-6">
-            <button class="btn btn-sm btn-secondary float-left" onClick="">
+            <button
+              class="btn btn-sm btn-secondary float-left"
+              (click)="previousStep()"
+            >
               Try again
             </button>
           </div>
