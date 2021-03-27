@@ -1,6 +1,7 @@
 <div class="wizard">
   <div class="content">
     Step: {{ step }}
+
     <section *ngIf="step === 1">
       <h2 class="section-heading">Welcome!</h2>
       <p>Thank you for choosing "Cuenta Corriente OpenClose".</p>
@@ -45,6 +46,7 @@
             [disabled]="!consent"
           >
             Next
+            <i class="bi bi-chevron-right"></i>
           </button>
         </div>
       </div>
@@ -139,6 +141,8 @@
             class="btn btn-sm btn-light float-left"
             (click)="previousStep()"
           >
+            <i class="bi bi-chevron-left"></i>
+
             Previous
           </button>
         </div>
@@ -157,6 +161,7 @@
             ></div>
 
             Next
+            <i class="bi bi-chevron-right"></i>
           </button>
         </div>
       </div>
@@ -164,25 +169,33 @@
 
     <section *ngIf="step == 3">
       <div *ngIf="formSuccess">
-        <h2 class="section-heading">Congratulations!</h2>
+        <h2 class="section-heading">
+          <i class="bi bi-check-circle successIcon"></i>
+          Congratulations!
+        </h2>
         <p>Your password was saved successfully.</p>
         <p>You can start to use your account now.</p>
         <div class="row mt-5">
           <div class="col-6">
             <button class="btn btn-sm btn-light float-left" (click)="restart()">
+              <i class="bi bi-chevron-left"></i>
               Restart
             </button>
           </div>
           <div class="col-6">
             <button class="btn btn-sm btn-secondary float-right">
               Access my account
+              <i class="bi bi-chevron-right"></i>
             </button>
           </div>
         </div>
       </div>
 
       <div *ngIf="!formSuccess">
-        <h2 class="section-heading">An error was occurred :(</h2>
+        <h2 class="section-heading">
+          <i class="bi bi-exclamation-diamond errorIcon"></i>
+          An error was occurred :(
+        </h2>
         <p>Was not possible save your password. Please try agian later.</p>
         <div class="row mt-5">
           <div class="col-6">
@@ -190,6 +203,7 @@
               class="btn btn-sm btn-secondary float-left"
               (click)="previousStep()"
             >
+              <i class="bi bi-chevron-left"></i>
               Try again
             </button>
           </div>
