@@ -36,11 +36,13 @@
     .successIcon {
       font-size: 55px;
       color: $success;
+      vertical-align: middle;
     }
 
     .errorIcon {
       font-size: 50px;
       color: $danger;
+      vertical-align: middle;
     }
   }
 
