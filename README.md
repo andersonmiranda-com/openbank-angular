@@ -2,11 +2,7 @@
 
 This is the Angular version of a 3 steps wizard with form validation, backend simulation and translation to EN/ES.
 
-### Online Demo
-
-[https://openbank-angular.herokuapp.com/](https://openbank-angular.herokuapp.com/)
-
-Instructions:
+###Instructions:
 
 ## Development server
 
