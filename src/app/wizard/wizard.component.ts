@@ -34,15 +34,7 @@ export class WizardComponent implements OnInit {
   ngOnInit(): void {
     this.userForm = this.formBuilder.group(
       {
-        pass: [
-          '',
-          [
-            Validators.required,
-            Validators.minLength(8),
-            Validators.maxLength(24),
-            Validators.pattern(this.passPattern),
-          ],
-        ],
+        pass: ['', [Validators.required, Validators.pattern(this.passPattern)]],
         repass: ['', [Validators.required]],
         hint: ['', [Validators.maxLength(255)]],
       },

@@ -72,6 +72,9 @@
               name="pass"
               id="pass"
               class="form-control"
+              [ngClass]="{
+                'is-invalid': getControl.pass.invalid && formSubmited
+              }"
               placeholder="Password"
               formControlName="pass"
             />
@@ -83,13 +86,7 @@
                 Password is required
               </small>
 
-              <small
-                *ngIf="
-                  getControl.pass.errors?.pattern ||
-                  getControl.pass.errors?.maxlength ||
-                  getControl.pass.errors?.minlength
-                "
-              >
+              <small *ngIf="getControl.pass.errors?.pattern">
                 Invalid password
               </small>
             </div>
@@ -102,6 +99,9 @@
               id="repass"
               required
               class="form-control"
+              [ngClass]="{
+                'is-invalid': userForm.errors?.mismatch && formSubmited
+              }"
               placeholder="Confirm"
               formControlName="repass"
             />
@@ -123,6 +123,9 @@
             name="hint"
             id="hint"
             class="form-control"
+            [ngClass]="{
+              'is-invalid': getControl.hint.invalid && formSubmited
+            }"
             placeholder="Hint"
             formControlName="hint"
           />
